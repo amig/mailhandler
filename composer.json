@@ -1,0 +1,23 @@
+{
+  "name": "amig/mailhandler",
+  "description": "A wrapper class around the PHPMailer package for proprietary use",
+  "type": "library",
+  "minimum-stability": "stable",
+  "version": "1.0.0",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.2.0",
+    "phpmailer/phpmailer": "^6.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "mailHandler": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ami Geva",
+      "email": "ami.geva@gmail.com"
+    }
+  ]
+}
