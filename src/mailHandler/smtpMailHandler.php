@@ -41,7 +41,6 @@ class smtpMailHandler {
       $this->mail->addAddress($to);
     }
 
-
     if (!empty($inReplyTo)) {
       $this->mail->addCustomHeader('in_reply_to', $inReplyTo);
       $this->mail->addCustomHeader('references', $inReplyTo);
@@ -70,6 +69,7 @@ class smtpMailHandler {
   /**
    *
    * @param mixed $bcc A single email address or an array of email addresses
+   * @return $this
    */
   public function addBCCtoEnvelop($bcc) {
     if (is_array($bcc)) {
@@ -80,6 +80,17 @@ class smtpMailHandler {
     else {
       $this->mail->addBCC($bcc);
     }
+
+    return $this;
+  }
+
+  /**
+   *
+   * @param string $path
+   * @return $this
+   */
+  public function addAttachmentToEnvelop($path) {
+    $this->mail->addAttachment($path);
 
     return $this;
   }
